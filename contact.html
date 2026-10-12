@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elysium - Contact</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">Elysium</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-actions">
+        <select id="langSelect">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+        <button id="themeToggleBtn" class="secondary-btn">Dark</button>
+        <button id="authBtn" class="primary-btn">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 data-i18n="contact.title">Contact</h1>
+
+    <section class="card">
+      <form id="contactForm">
+        <input type="text" id="contactName" placeholder="Your name" required />
+        <input type="email" id="contactEmail" placeholder="Your email" required />
+        <textarea id="contactMessage" placeholder="Your message" required></textarea>
+        <button type="submit" class="primary-btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
