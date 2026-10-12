@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elysium - Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">Elysium</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-actions">
+        <select id="langSelect">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+        <button id="themeToggleBtn" class="secondary-btn">Dark</button>
+        <button id="authBtn" class="primary-btn">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 data-i18n="admin.title">Admin Panel</h1>
+
+    <div id="adminAccessDenied" class="card hidden">
+      <p data-i18n="admin.accessDenied">Authentication required.</p>
+    </div>
+
+    <div id="adminPanel" class="hidden">
+      <section class="card">
+        <h3 data-i18n="admin.manageAdmins">Manage admins</h3>
+        <input type="email" id="adminEmailInput" placeholder="Add admin email" />
+        <button id="addAdminBtn" class="primary-btn">Add admin</button>
+      </section>
+
+      <section class="card">
+        <h3 data-i18n="admin.filesTitle">Uploaded files</h3>
+        <div id="adminFilesList"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
