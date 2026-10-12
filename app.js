@@ -1,18 +1,22 @@
 const SUPREME_ADMIN_EMAIL = "brainnerschwarz@gmail.com";
 
+// Configuration Firebase configurée pour Elysium
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDRWOfzks3Mni03-GzeltsXNp1VJ8rBPmQ",
+  authDomain: "elysium-c4743.firebaseapp.com",
+  projectId: "elysium-c4743",
+  storageBucket: "elysium-c4743.firebasestorage.app",
+  messagingSenderId: "588187726489",
+  appId: "1:588187726489:web:1a6532c7eb25ab54553e08",
+  measurementId: "G-CCPSJYNSB9"
 };
 
+// Initialisation des services
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 const storage = firebase.storage();
+
 
 let currentLanguage = localStorage.getItem("elysium_lang") || "en";
 let isLoginMode = true;
