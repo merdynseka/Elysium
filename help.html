@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elysium - Help</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">Elysium</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-actions">
+        <select id="langSelect">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+        <button id="themeToggleBtn" class="secondary-btn">Dark</button>
+        <button id="authBtn" class="primary-btn">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 data-i18n="help.title">Help</h1>
+
+    <section class="card">
+      <h3 data-i18n="help.q1">How do I upload a file?</h3>
+      <p data-i18n="help.a1">Create an account, sign in, then click “Upload a file” on the home page.</p>
+    </section>
+
+    <section class="card">
+      <h3 data-i18n="help.q2">Do I need an account to download?</h3>
+      <p data-i18n="help.a2">Yes. You must sign in to download or upload resources.</p>
+    </section>
+
+    <section class="card">
+      <h3 data-i18n="help.q3">Who manages the site?</h3>
+      <p data-i18n="help.a3">Only the confirmed admin and authorized admins can manage the platform.</p>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
