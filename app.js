@@ -172,6 +172,20 @@ async function updateAuthUi() {
     userEmailText.textContent = currentUser ? currentUser.email : "Non connecté";
   }
 
+  const userProfile = document.getElementById("userProfile");
+  if (userProfile) {
+    if (currentUser) {
+      const avatar = document.getElementById("userAvatar");
+      const emailLabel = document.getElementById("userEmailLabel");
+      if (avatar) avatar.textContent = (currentUser.email || "?").charAt(0).toUpperCase();
+      if (emailLabel) emailLabel.textContent = currentUser.email || "";
+      userProfile.title = currentUser.email || "";
+      userProfile.classList.remove("hidden");
+    } else {
+      userProfile.classList.add("hidden");
+    }
+  }
+
   if (authBtn) {
     authBtn.onclick = async () => {
       if (currentUser) {
