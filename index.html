@@ -11,7 +11,7 @@
     <div class="container nav">
       <div class="brand">Elysium</div>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="settings.html">Settings</a>
         <a href="help.html">Help</a>
         <a href="contact.html">Contact</a>
@@ -22,7 +22,6 @@
           <option value="en">EN</option>
           <option value="fr">FR</option>
         </select>
-        <button id="themeToggleBtn" class="secondary-btn">Dark</button>
         <button id="authBtn" class="primary-btn">Login</button>
       </div>
     </div>
@@ -101,14 +100,19 @@
     </div>
   </div>
 
-    <!-- SDKs Firebase version 10.12.2 (Compat) -->
+  <footer class="footer">
+    <div class="container">
+      <span><strong>Elysium</strong> — Student Library</span>
+      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+    </div>
+  </footer>
+
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
-  
+
   <script src="translations.js"></script>
   <script src="app.js"></script>
-
 </body>
-  </html>
+</html>

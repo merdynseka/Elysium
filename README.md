@@ -9,9 +9,9 @@ A simple free website for students to share ebooks, PDFs, images, and podcasts.
 - Contact page
 - Admin panel
 - English and French support
-- White theme only
+- Modern light theme only
 - Deepskyblue accent
-- Login required for upload and download
+- Login required for upload; browsing and downloads are open to everyone
 - Supreme admin email: brainnerschwarz@gmail.com
 
 ## Free stack
@@ -44,3 +44,4 @@ const firebaseConfig = {
   messagingSenderId: "YOUR_SENDER_ID",
   appId: "YOUR_APP_ID"
 };
+```

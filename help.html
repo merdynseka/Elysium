@@ -13,7 +13,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="settings.html">Settings</a>
-        <a href="help.html">Help</a>
+        <a href="help.html" class="active">Help</a>
         <a href="contact.html">Contact</a>
         <a href="admin.html">Admin</a>
       </nav>
@@ -22,7 +22,6 @@
           <option value="en">EN</option>
           <option value="fr">FR</option>
         </select>
-        <button id="themeToggleBtn" class="secondary-btn">Dark</button>
         <button id="authBtn" class="primary-btn">Login</button>
       </div>
     </div>
@@ -38,7 +37,7 @@
 
     <section class="card">
       <h3 data-i18n="help.q2">Do I need an account to download?</h3>
-      <p data-i18n="help.a2">Yes. You must sign in to download or upload resources.</p>
+      <p data-i18n="help.a2">No. Anyone can browse and open resources. You only need an account to upload.</p>
     </section>
 
     <section class="card">
@@ -47,8 +46,18 @@
     </section>
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <span><strong>Elysium</strong> — Student Library</span>
+      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+    </div>
+  </footer>
+
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
   <script src="translations.js"></script>
   <script src="app.js"></script>
 </body>

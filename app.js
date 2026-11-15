@@ -45,22 +45,6 @@ function applyTranslations() {
   document.documentElement.lang = currentLanguage;
 }
 
-function toggleTheme() {
-  const isDark = document.body.classList.toggle("dark");
-  localStorage.setItem("elysium_theme", isDark ? "dark" : "light");
-}
-
-function initTheme() {
-  const savedTheme = localStorage.getItem("elysium_theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-  }
-  const btn = document.getElementById("themeToggleBtn");
-  if (btn) {
-    btn.textContent = document.body.classList.contains("dark") ? "Light" : "Dark";
-  }
-}
-
 function renderResourceCard(item) {
   const wrap = document.createElement("div");
   wrap.className = "resource-card";
@@ -368,11 +352,6 @@ function bindGlobalUI() {
     settingsLanguage.addEventListener("change", (e) => setLanguage(e.target.value));
   }
 
-  const themeToggleBtn = document.getElementById("themeToggleBtn");
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", toggleTheme);
-  }
-
   const authForm = document.getElementById("authForm");
   if (authForm) authForm.addEventListener("submit", handleAuthSubmit);
 
@@ -408,7 +387,6 @@ function bindGlobalUI() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   setLanguage(currentLanguage);
-  initTheme();
   bindGlobalUI();
   bindHomePageEvents();
 
