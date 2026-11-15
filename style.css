@@ -197,11 +197,37 @@ textarea { min-height: 110px; resize: vertical; }
 }
 
 /* ---------- User profile chip ---------- */
-.user-profile {
+.user-profile { position: relative; }
+.profile-chip-btn {
   display: flex; align-items: center; gap: 9px;
   background: var(--accent-soft); border: 1px solid var(--border);
-  padding: 5px 14px 5px 5px; border-radius: 999px; max-width: 260px;
+  padding: 5px 14px 5px 5px; border-radius: 999px; max-width: 280px;
+  cursor: pointer; font: inherit; transition: box-shadow .15s ease;
 }
+.profile-chip-btn:hover { box-shadow: var(--shadow); }
+.profile-caret {
+  width: 0; height: 0; flex: none;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid var(--muted);
+}
+.profile-dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; box-shadow: var(--shadow-hover);
+  min-width: 230px; padding: 8px;
+}
+.profile-dropdown-email {
+  padding: 8px 12px; font-size: .85rem; font-weight: 600; color: var(--muted);
+  border-bottom: 1px solid var(--border); margin-bottom: 6px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.profile-dropdown a, .profile-dropdown button {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 12px; border-radius: 9px; border: none; background: none;
+  color: var(--text); font: inherit; font-weight: 600; font-size: .93rem;
+  text-decoration: none; cursor: pointer;
+}
+.profile-dropdown a:hover, .profile-dropdown button:hover { background: var(--accent-soft); color: var(--accent-dark); }
 .user-avatar {
   width: 32px; height: 32px; border-radius: 50%; flex: none;
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
@@ -215,5 +241,6 @@ textarea { min-height: 110px; resize: vertical; }
 }
 @media (max-width: 640px) {
   .user-email { display: none; }
-  .user-profile { padding: 5px; }
+  .profile-chip-btn { padding: 5px; }
+  .profile-caret { display: none; }
 }

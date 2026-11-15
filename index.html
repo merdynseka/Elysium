@@ -23,8 +23,16 @@
           <option value="en">EN</option>
         </select>
         <div id="userProfile" class="user-profile hidden">
-          <div id="userAvatar" class="user-avatar">?</div>
-          <span id="userEmailLabel" class="user-email"></span>
+          <button id="profileMenuBtn" class="profile-chip-btn" type="button">
+            <span id="userAvatar" class="user-avatar">?</span>
+            <span id="userEmailLabel" class="user-email"></span>
+            <span class="profile-caret"></span>
+          </button>
+          <div id="profileDropdown" class="profile-dropdown hidden">
+            <div id="profileDropdownEmail" class="profile-dropdown-email"></div>
+            <a href="settings.html" data-i18n="nav.settings">Paramètres</a>
+            <button id="profileLogoutBtn" type="button" data-i18n="settings.logout">Se déconnecter</button>
+          </div>
         </div>
         <button id="authBtn" class="primary-btn" data-i18n="auth.login">Connexion</button>
       </div>

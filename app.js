@@ -180,6 +180,8 @@ async function updateAuthUi() {
       if (avatar) avatar.textContent = (currentUser.email || "?").charAt(0).toUpperCase();
       if (emailLabel) emailLabel.textContent = currentUser.email || "";
       userProfile.title = currentUser.email || "";
+      const ddEmail = document.getElementById("profileDropdownEmail");
+      if (ddEmail) ddEmail.textContent = currentUser.email || "";
       userProfile.classList.remove("hidden");
     } else {
       userProfile.classList.add("hidden");
@@ -385,6 +387,30 @@ function bindGlobalUI() {
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async () => {
+      await auth.signOut();
+      updateAuthUi();
+    });
+  }
+
+  const profileMenuBtn = document.getElementById("profileMenuBtn");
+  const profileDropdown = document.getElementById("profileDropdown");
+  if (profileMenuBtn && profileDropdown) {
+    profileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      profileDropdown.classList.toggle("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!profileDropdown.classList.contains("hidden") &&
+          !document.getElementById("userProfile").contains(e.target)) {
+        profileDropdown.classList.add("hidden");
+      }
+    });
+  }
+
+  const profileLogoutBtn = document.getElementById("profileLogoutBtn");
+  if (profileLogoutBtn) {
+    profileLogoutBtn.addEventListener("click", async () => {
+      if (profileDropdown) profileDropdown.classList.add("hidden");
       await auth.signOut();
       updateAuthUi();
     });
