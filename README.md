@@ -8,7 +8,7 @@ A simple free website for students to share ebooks, PDFs, images, and podcasts.
 - Help page
 - Contact page
 - Admin panel
-- English and French support
+- French by default, with English available
 - Modern light theme only
 - Deepskyblue accent
 - Login required for upload; browsing and downloads are open to everyone

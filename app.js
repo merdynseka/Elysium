@@ -18,7 +18,7 @@ const db = firebase.firestore();
 const storage = firebase.storage();
 
 
-let currentLanguage = localStorage.getItem("elysium_lang") || "en";
+let currentLanguage = localStorage.getItem("elysium_lang") || "fr";
 let isLoginMode = true;
 let currentUser = null;
 
@@ -42,6 +42,13 @@ function applyTranslations() {
     if (text) el.textContent = text;
   });
 
+  const allPlaceholderNodes = document.querySelectorAll("[data-i18n-placeholder]");
+  allPlaceholderNodes.forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    const text = translations[currentLanguage][key];
+    if (text) el.placeholder = text;
+  });
+
   document.documentElement.lang = currentLanguage;
 }
 
@@ -60,7 +67,7 @@ function renderResourceCard(item) {
   title.textContent = item.title;
 
   const desc = document.createElement("p");
-  desc.textContent = item.description || "Course resource";
+  desc.textContent = item.description || "Ressource de cours";
 
   const meta = document.createElement("div");
   meta.className = "meta";
@@ -78,7 +85,7 @@ function renderResourceCard(item) {
   downloadBtn.href = item.fileUrl || "#";
   downloadBtn.target = "_blank";
   downloadBtn.className = "primary-btn";
-  downloadBtn.textContent = "Open";
+  downloadBtn.textContent = "Ouvrir";
 
   actions.appendChild(downloadBtn);
   content.appendChild(title);
@@ -123,15 +130,15 @@ function toggleAuthMode() {
   const toggleBtn = document.getElementById("toggleAuthMode");
 
   if (isLoginMode) {
-    title.textContent = "Login";
-    button.textContent = "Login";
-    modeText.textContent = "Need an account?";
-    toggleBtn.textContent = "Create one";
+    title.textContent = "Connexion";
+    button.textContent = "Connexion";
+    modeText.textContent = "Pas encore de compte ?";
+    toggleBtn.textContent = "Créer un compte";
   } else {
-    title.textContent = "Create account";
-    button.textContent = "Create account";
-    modeText.textContent = "Already have an account?";
-    toggleBtn.textContent = "Login";
+    title.textContent = "Créer un compte";
+    button.textContent = "Créer un compte";
+    modeText.textContent = "Vous avez déjà un compte ?";
+    toggleBtn.textContent = "Connexion";
   }
 }
 
@@ -158,11 +165,11 @@ async function updateAuthUi() {
   currentUser = auth.currentUser;
 
   if (authBtn) {
-    authBtn.textContent = currentUser ? "Logout" : "Login";
+    authBtn.textContent = currentUser ? "Déconnexion" : "Connexion";
   }
 
   if (userEmailText) {
-    userEmailText.textContent = currentUser ? currentUser.email : "Not signed in";
+    userEmailText.textContent = currentUser ? currentUser.email : "Non connecté";
   }
 
   if (authBtn) {
@@ -250,7 +257,7 @@ async function handleUpload(e) {
   const description = document.getElementById("uploadDescription").value.trim();
 
   if (!file || !title || !course) {
-    alert("Please fill all required fields.");
+    alert("Veuillez remplir tous les champs obligatoires.");
     return;
   }
 
@@ -272,10 +279,10 @@ async function handleUpload(e) {
 
     document.getElementById("uploadForm").reset();
     document.getElementById("uploadModal").classList.add("hidden");
-    alert("File uploaded successfully.");
+    alert("Fichier téléversé avec succès.");
     loadResources();
   } catch (error) {
-    alert("Upload failed: " + error.message);
+    alert("Échec du téléversement : " + error.message);
   }
 }
 
@@ -307,12 +314,12 @@ async function addAdmin() {
 
   if (!email) return;
   if (auth.currentUser.email !== SUPREME_ADMIN_EMAIL) {
-    alert("Only the supreme admin can add admins.");
+    alert("Seul l'administrateur suprême peut ajouter des administrateurs.");
     return;
   }
 
   await db.collection("admins").doc(email).set({ email, addedBy: auth.currentUser.email });
-  alert("Admin added.");
+  alert("Administrateur ajouté.");
   document.getElementById("adminEmailInput").value = "";
 }
 
@@ -331,8 +338,8 @@ async function loadAdminFiles() {
     entry.innerHTML = `
       <strong>${item.title}</strong><br>
       <span>${item.course} • ${item.type}</span><br>
-      <small>Uploaded by: ${item.uploadedBy || "unknown"}</small><br>
-      <a href="${item.fileUrl}" target="_blank">Open</a>
+      <small>Téléversé par : ${item.uploadedBy || "inconnu"}</small><br>
+      <a href="${item.fileUrl}" target="_blank">Ouvrir</a>
     `;
 
     list.appendChild(entry);
@@ -376,7 +383,7 @@ function bindGlobalUI() {
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("Message sent successfully.");
+      alert("Message envoyé avec succès.");
       contactForm.reset();
     });
   }

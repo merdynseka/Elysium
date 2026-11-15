@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elysium - Settings</title>
+  <title>Elysium - Paramètres</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,44 +11,44 @@
     <div class="container nav">
       <div class="brand">Elysium</div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="settings.html" class="active">Settings</a>
-        <a href="help.html">Help</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html">Admin</a>
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="settings.html" class="active" data-i18n="nav.settings">Paramètres</a>
+        <a href="help.html" data-i18n="nav.help">Aide</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="admin.html" data-i18n="nav.admin">Admin</a>
       </nav>
       <div class="nav-actions">
         <select id="langSelect">
-          <option value="en">EN</option>
           <option value="fr">FR</option>
+          <option value="en">EN</option>
         </select>
-        <button id="authBtn" class="primary-btn">Login</button>
+        <button id="authBtn" class="primary-btn" data-i18n="auth.login">Connexion</button>
       </div>
     </div>
   </header>
 
   <main class="container page">
-    <h1 data-i18n="settings.title">Settings</h1>
+    <h1 data-i18n="settings.title">Paramètres</h1>
 
     <section class="card">
-      <h3 data-i18n="settings.language">Language</h3>
+      <h3 data-i18n="settings.language">Langue</h3>
       <select id="settingsLanguage">
-        <option value="en">English</option>
         <option value="fr">Français</option>
+        <option value="en">English</option>
       </select>
     </section>
 
     <section class="card">
-      <h3 data-i18n="settings.account">Account</h3>
-      <p id="userEmailText">Not signed in</p>
-      <button id="logoutBtn" class="secondary-btn">Logout</button>
+      <h3 data-i18n="settings.account">Compte</h3>
+      <p id="userEmailText" data-i18n="settings.notSignedIn">Non connecté</p>
+      <button id="logoutBtn" class="secondary-btn" data-i18n="settings.logout">Se déconnecter</button>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <span><strong>Elysium</strong> — Student Library</span>
-      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+      <span><strong>Elysium</strong> — Bibliothèque étudiante</span>
+      <span data-i18n="footer.text">Partagez des ebooks, des PDFs, des images et des podcasts avec vos camarades.</span>
     </div>
   </footer>
 

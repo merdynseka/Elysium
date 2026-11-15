@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,18 +11,18 @@
     <div class="container nav">
       <div class="brand">Elysium</div>
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="settings.html">Settings</a>
-        <a href="help.html">Help</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html">Admin</a>
+        <a href="index.html" class="active" data-i18n="nav.home">Accueil</a>
+        <a href="settings.html" data-i18n="nav.settings">Paramètres</a>
+        <a href="help.html" data-i18n="nav.help">Aide</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="admin.html" data-i18n="nav.admin">Admin</a>
       </nav>
       <div class="nav-actions">
         <select id="langSelect">
-          <option value="en">EN</option>
           <option value="fr">FR</option>
+          <option value="en">EN</option>
         </select>
-        <button id="authBtn" class="primary-btn">Login</button>
+        <button id="authBtn" class="primary-btn" data-i18n="auth.login">Connexion</button>
       </div>
     </div>
   </header>
@@ -30,33 +30,33 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="eyebrow" data-i18n="hero.eyebrow">Student Library</p>
-        <h1 data-i18n="hero.title">Share your course files with everyone</h1>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Bibliothèque étudiante</p>
+        <h1 data-i18n="hero.title">Partagez vos fichiers de cours avec tout le monde</h1>
         <p data-i18n="hero.subtitle">
-          Upload and discover ebooks, PDFs, images, and podcasts from your courses.
+          Téléversez et découvrez des ebooks, PDFs, images et podcasts de vos cours.
         </p>
         <div class="hero-actions">
-          <button class="primary-btn" data-i18n="hero.uploadBtn" id="openUploadBtn">Upload a file</button>
-          <a href="#resources" class="secondary-btn" data-i18n="hero.browseBtn">Browse resources</a>
+          <button class="primary-btn" data-i18n="hero.uploadBtn" id="openUploadBtn">Téléverser un fichier</button>
+          <a href="#resources" class="secondary-btn" data-i18n="hero.browseBtn">Parcourir les ressources</a>
         </div>
       </div>
     </section>
 
     <section class="panel search-panel">
-      <input id="searchInput" type="text" placeholder="Search course, title, category" />
+      <input id="searchInput" type="text" data-i18n-placeholder="search.placeholder" placeholder="Rechercher un cours, un titre, une catégorie" />
       <select id="typeFilter">
-        <option value="all">All types</option>
+        <option value="all" data-i18n="search.allTypes">Tous les types</option>
         <option value="pdf">PDF</option>
         <option value="ebook">Ebook</option>
         <option value="image">Image</option>
         <option value="podcast">Podcast</option>
       </select>
-      <button id="searchBtn" class="primary-btn">Search</button>
+      <button id="searchBtn" class="primary-btn" data-i18n="search.button">Rechercher</button>
     </section>
 
     <section id="resources" class="resources">
       <div class="section-head">
-        <h2 data-i18n="resources.title">Latest Resources</h2>
+        <h2 data-i18n="resources.title">Dernières ressources</h2>
       </div>
       <div id="resourceGrid" class="resource-grid"></div>
     </section>
@@ -65,21 +65,21 @@
   <div id="uploadModal" class="modal hidden">
     <div class="modal-content">
       <span class="close-modal" id="closeUploadModal">&times;</span>
-      <h3 data-i18n="upload.title">Upload resource</h3>
+      <h3 data-i18n="upload.title">Téléverser une ressource</h3>
 
       <form id="uploadForm">
-        <input type="text" id="uploadTitle" placeholder="Title" required />
-        <input type="text" id="uploadCourse" placeholder="Course" required />
+        <input type="text" id="uploadTitle" data-i18n-placeholder="upload.titlePh" placeholder="Titre" required />
+        <input type="text" id="uploadCourse" data-i18n-placeholder="upload.coursePh" placeholder="Cours" required />
         <select id="uploadType">
           <option value="pdf">PDF</option>
           <option value="ebook">Ebook</option>
           <option value="image">Image</option>
           <option value="podcast">Podcast</option>
         </select>
-        <input type="text" id="uploadTags" placeholder="Tags (comma separated)" />
-        <textarea id="uploadDescription" placeholder="Description"></textarea>
+        <input type="text" id="uploadTags" data-i18n-placeholder="upload.tagsPh" placeholder="Étiquettes (séparées par des virgules)" />
+        <textarea id="uploadDescription" data-i18n-placeholder="upload.descPh" placeholder="Description"></textarea>
         <input type="file" id="fileInput" required />
-        <button type="submit" class="primary-btn">Upload</button>
+        <button type="submit" class="primary-btn" data-i18n="upload.submit">Téléverser</button>
       </form>
     </div>
   </div>
@@ -87,23 +87,23 @@
   <div id="authModal" class="modal hidden">
     <div class="modal-content">
       <span class="close-modal" id="closeAuthModal">&times;</span>
-      <h3 id="authTitle">Login</h3>
+      <h3 id="authTitle">Connexion</h3>
       <form id="authForm">
-        <input type="email" id="emailInput" placeholder="Email" required />
-        <input type="password" id="passwordInput" placeholder="Password" required />
-        <button type="submit" class="primary-btn" id="authSubmitBtn">Login</button>
+        <input type="email" id="emailInput" data-i18n-placeholder="auth.email" placeholder="E-mail" required />
+        <input type="password" id="passwordInput" data-i18n-placeholder="auth.password" placeholder="Mot de passe" required />
+        <button type="submit" class="primary-btn" id="authSubmitBtn">Connexion</button>
       </form>
       <p class="auth-switch">
-        <span id="authModeText">Need an account?</span>
-        <button type="button" id="toggleAuthMode" class="link-btn">Create one</button>
+        <span id="authModeText" data-i18n="auth.needAccount">Pas encore de compte ?</span>
+        <button type="button" id="toggleAuthMode" class="link-btn" data-i18n="auth.createOne">Créer un compte</button>
       </p>
     </div>
   </div>
 
   <footer class="footer">
     <div class="container">
-      <span><strong>Elysium</strong> — Student Library</span>
-      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+      <span><strong>Elysium</strong> — Bibliothèque étudiante</span>
+      <span data-i18n="footer.text">Partagez des ebooks, des PDFs, des images et des podcasts avec vos camarades.</span>
     </div>
   </footer>
 

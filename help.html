@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elysium - Help</title>
+  <title>Elysium - Aide</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,45 +11,45 @@
     <div class="container nav">
       <div class="brand">Elysium</div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="settings.html">Settings</a>
-        <a href="help.html" class="active">Help</a>
-        <a href="contact.html">Contact</a>
-        <a href="admin.html">Admin</a>
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="settings.html" data-i18n="nav.settings">Paramètres</a>
+        <a href="help.html" class="active" data-i18n="nav.help">Aide</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        <a href="admin.html" data-i18n="nav.admin">Admin</a>
       </nav>
       <div class="nav-actions">
         <select id="langSelect">
-          <option value="en">EN</option>
           <option value="fr">FR</option>
+          <option value="en">EN</option>
         </select>
-        <button id="authBtn" class="primary-btn">Login</button>
+        <button id="authBtn" class="primary-btn" data-i18n="auth.login">Connexion</button>
       </div>
     </div>
   </header>
 
   <main class="container page">
-    <h1 data-i18n="help.title">Help</h1>
+    <h1 data-i18n="help.title">Aide</h1>
 
     <section class="card">
-      <h3 data-i18n="help.q1">How do I upload a file?</h3>
-      <p data-i18n="help.a1">Create an account, sign in, then click “Upload a file” on the home page.</p>
+      <h3 data-i18n="help.q1">Comment téléverser un fichier ?</h3>
+      <p data-i18n="help.a1">Créez un compte, connectez-vous, puis cliquez sur « Téléverser un fichier » sur la page d’accueil.</p>
     </section>
 
     <section class="card">
-      <h3 data-i18n="help.q2">Do I need an account to download?</h3>
-      <p data-i18n="help.a2">No. Anyone can browse and open resources. You only need an account to upload.</p>
+      <h3 data-i18n="help.q2">Ai-je besoin d’un compte pour télécharger ?</h3>
+      <p data-i18n="help.a2">Non. Tout le monde peut parcourir et ouvrir les ressources. Un compte est nécessaire uniquement pour téléverser.</p>
     </section>
 
     <section class="card">
-      <h3 data-i18n="help.q3">Who manages the site?</h3>
-      <p data-i18n="help.a3">Only the confirmed admin and authorized admins can manage the platform.</p>
+      <h3 data-i18n="help.q3">Qui gère le site ?</h3>
+      <p data-i18n="help.a3">Seuls l’administrateur confirmé et les administrateurs autorisés peuvent gérer la plateforme.</p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <span><strong>Elysium</strong> — Student Library</span>
-      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+      <span><strong>Elysium</strong> — Bibliothèque étudiante</span>
+      <span data-i18n="footer.text">Partagez des ebooks, des PDFs, des images et des podcasts avec vos camarades.</span>
     </div>
   </footer>
 

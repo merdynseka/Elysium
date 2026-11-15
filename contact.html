@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,18 +11,18 @@
     <div class="container nav">
       <div class="brand">Elysium</div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="settings.html">Settings</a>
-        <a href="help.html">Help</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="admin.html">Admin</a>
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="settings.html" data-i18n="nav.settings">Paramètres</a>
+        <a href="help.html" data-i18n="nav.help">Aide</a>
+        <a href="contact.html" class="active" data-i18n="nav.contact">Contact</a>
+        <a href="admin.html" data-i18n="nav.admin">Admin</a>
       </nav>
       <div class="nav-actions">
         <select id="langSelect">
-          <option value="en">EN</option>
           <option value="fr">FR</option>
+          <option value="en">EN</option>
         </select>
-        <button id="authBtn" class="primary-btn">Login</button>
+        <button id="authBtn" class="primary-btn" data-i18n="auth.login">Connexion</button>
       </div>
     </div>
   </header>
@@ -32,18 +32,18 @@
 
     <section class="card">
       <form id="contactForm">
-        <input type="text" id="contactName" placeholder="Your name" required />
-        <input type="email" id="contactEmail" placeholder="Your email" required />
-        <textarea id="contactMessage" placeholder="Your message" required></textarea>
-        <button type="submit" class="primary-btn">Send</button>
+        <input type="text" id="contactName" data-i18n-placeholder="contact.namePh" placeholder="Votre nom" required />
+        <input type="email" id="contactEmail" data-i18n-placeholder="contact.emailPh" placeholder="Votre e-mail" required />
+        <textarea id="contactMessage" data-i18n-placeholder="contact.messagePh" placeholder="Votre message" required></textarea>
+        <button type="submit" class="primary-btn" data-i18n="contact.send">Envoyer</button>
       </form>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <span><strong>Elysium</strong> — Student Library</span>
-      <span>Share ebooks, PDFs, images and podcasts with your fellow students.</span>
+      <span><strong>Elysium</strong> — Bibliothèque étudiante</span>
+      <span data-i18n="footer.text">Partagez des ebooks, des PDFs, des images et des podcasts avec vos camarades.</span>
     </div>
   </footer>
 
